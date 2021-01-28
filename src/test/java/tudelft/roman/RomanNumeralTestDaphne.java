@@ -39,11 +39,19 @@ public class RomanNumeralTestDaphne {
         Assertions.assertEquals(-1, roman.convertDaphne(input));
     }
 
-
     @Test
     public void wrongInput2() {
         RomanNumeral roman = new RomanNumeral();
         String input = "XXC";
         Assertions.assertEquals(-1, roman.convertDaphne(input));
     }
+
+    @Test
+    public void wrongInput3() {
+        RomanNumeral roman = new RomanNumeral();
+        String input = "A";
+        Assertions.assertEquals(-1, roman.convertDaphne(input));
+    }
+
+
 }

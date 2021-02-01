@@ -33,6 +33,11 @@ public class RomanNumeral {
             }
         }
 
+        //If there is more than one character, but the first two characters are the same, the string is invalid
+        if (s.length() > 1 && map.get(s.charAt(1)) == map.get(s.charAt(0)))
+        {
+            return -1;
+        }
         String temp = s;
         int result = 0;
         while (temp.length() > 0) {
@@ -40,11 +45,6 @@ public class RomanNumeral {
             if (temp.length() == 1) {
                 result += map.get(temp.charAt(0));
                 return result;
-            }
-            //If there is more than one character, but the first two characters are the same, the string is invalid
-            else if (map.get(temp.charAt(1)) == map.get(temp.charAt(0)))
-            {
-                return -1;
             }
             //If the first character is less than the second, we have to subtract
             else if (map.get(temp.charAt(0)) < map.get(temp.charAt(1))) {

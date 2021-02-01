@@ -33,6 +33,13 @@ public class RomanNumeralTestDaphne {
     }
 
     @Test
+    public void moreNumbers() {
+        RomanNumeral roman = new RomanNumeral();
+        String input = "VIII";
+        Assertions.assertEquals(8, roman.convertDaphne(input));
+    }
+
+    @Test
     public void wrongInput() {
         RomanNumeral roman = new RomanNumeral();
         String input = "VX";
